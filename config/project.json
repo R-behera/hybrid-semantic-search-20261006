@@ -1,0 +1,52 @@
+{
+  "name": "Hybrid Semantic Search Service",
+  "problem": "Enterprise search needs explainable retrieval quality when embedding APIs are unavailable, expensive, or restricted.",
+  "domain": "semantic-search",
+  "architecture": "retrieval",
+  "hugging_face_tasks": [
+    "sentence-similarity",
+    "feature-extraction",
+    "text-ranking",
+    "question-answering"
+  ],
+  "recommended_stack": [
+    "FastAPI for search and indexing APIs",
+    "Sentence Transformers for dense embeddings",
+    "PostgreSQL plus pgvector HNSW indexes",
+    "BM25-compatible lexical retrieval",
+    "Redis for query and embedding caches",
+    "OpenTelemetry for latency and recall diagnostics"
+  ],
+  "real_world_data_sources": [
+    {
+      "name": "arXiv API",
+      "url": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&start=0&max_results=5",
+      "purpose": "Real technical papers for hybrid indexing"
+    },
+    {
+      "name": "Stack Exchange API",
+      "url": "https://api.stackexchange.com/2.3/questions?pagesize=5&order=desc&sort=activity&tagged=machine-learning&site=stackoverflow",
+      "purpose": "Real technical questions and metadata filters"
+    }
+  ],
+  "job_description_skills": [
+    "Dense, sparse, and hybrid information retrieval",
+    "Embedding model evaluation and vector-index tuning",
+    "Metadata authorization and filtered ANN search",
+    "Search relevance metrics and offline judgments",
+    "Latency, cost, and recall trade-off analysis"
+  ],
+  "impact_targets": [
+    "Reach Recall@10 >= 0.90 on a labeled relevance set",
+    "Improve MRR by >= 15% over lexical-only retrieval",
+    "Keep p95 search latency below 250 ms at one million vectors",
+    "Demonstrate authorization filters with zero cross-tenant leakage"
+  ],
+  "baseline_evaluation": {
+    "test_examples": 4,
+    "accuracy": 1,
+    "synthetic_evaluation": true
+  },
+  "estimated_delivery": "8-12 weeks for one engineer",
+  "generated_baseline_is_production_ready": false
+}

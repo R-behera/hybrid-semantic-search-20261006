@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid-semantic-search-20261006"
+version = "0.1.0"
+description = "A local-first semantic search service combining lexical retrieval, weighted concepts, filters, and offline evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "R-behera" }]
+dependencies = []
+
+[project.scripts]
+hybrid-semantic-search-20261006 = "hybrid_semantic_search.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
